@@ -1,0 +1,108 @@
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.csproj.AssemblyReference.cache
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\ChatWindow.baml
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\LoginWindow.baml
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\ChatWindow.g.cs
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\LoginWindow.g.cs
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova_MarkupCompile.cache
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.g.resources
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.AssemblyInfoInputs.cache
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.AssemblyInfo.cs
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.csproj.CoreCompileInputs.cache
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.exe
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.deps.json
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.runtimeconfig.json
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.pdb
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Firebase.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\LiteDB.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\System.Reactive.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-In.3CE1B464.Up2Date
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.dll
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\refint\Educa-Innova.dll
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.pdb
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.genruntimeconfig.cache
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\ref\Educa-Innova.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.exe
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.deps.json
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.runtimeconfig.json
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.pdb
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Firebase.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\FireSharp.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\LiteDB.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\System.Net.Http.Extensions.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\System.Net.Http.Primitives.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\System.Reactive.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\bin\Debug\net8.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\ChatWindow.baml
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\LoginWindow.baml
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\ChatWindow.g.cs
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\LoginWindow.g.cs
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova_MarkupCompile.cache
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.g.resources
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-In.3CE1B464.Up2Date
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\refint\Educa-Innova.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.pdb
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\ref\Educa-Innova.dll
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\RegistroWindow.baml
+C:\Users\Alumno\Desktop\Desarrollo de Interfaces\Educa-Innova\obj\Debug\net8.0-windows\RegistroWindow.g.cs
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.csproj.AssemblyReference.cache
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\ChatWindow.baml
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\LoginWindow.baml
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\RegistroWindow.baml
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\ChatWindow.g.cs
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\LoginWindow.g.cs
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\RegistroWindow.g.cs
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova_MarkupCompile.cache
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.g.resources
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.AssemblyInfoInputs.cache
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.AssemblyInfo.cs
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.csproj.CoreCompileInputs.cache
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\refint\Educa-Innova.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.pdb
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.exe
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.deps.json
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.runtimeconfig.json
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Educa-Innova.pdb
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Firebase.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\FireSharp.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\LiteDB.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\System.Net.Http.Extensions.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\System.Net.Http.Primitives.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\System.Reactive.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\bin\Debug\net8.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-In.3CE1B464.Up2Date
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\Educa-Innova.genruntimeconfig.cache
+C:\Users\dilia\Desktop\INTERFACES\Educa-Innova\obj\Debug\net8.0-windows\ref\Educa-Innova.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\FireSharp.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\Microsoft.Threading.Tasks.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\System.Net.Http.Extensions.dll
+C:\Users\dilia\Desktop\Educa-Innova\bin\Debug\net8.0-windows\System.Net.Http.Primitives.dll
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\RegistroWindow.baml
+C:\Users\dilia\Desktop\Educa-Innova\obj\Debug\net8.0-windows\RegistroWindow.g.cs

@@ -1,0 +1,205 @@
+﻿<Window x:Class="Educa_Innova.LoginWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="500" Width="350" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        KeyDown="pulsarIntro">
+
+    <!-- AQUÍ HAGO LA VENTANA PRINCIPAL DEL LOGIN. ESTO SIGNIFICA Q NO TENGO MAIN WINDOW PORQUE EN App.xml HE METIDO ESTO
+    "StartupUri="LoginWindow.xaml" LE PONGO UN TÍTULO "Login", LA ALTURA Y EL ANCHO QUE QUIERO. 
+    ADEMÁS, LE DIGO QUE QUIERO QUE LA VENTANA APAREZCA EN EL CENTRO DE LA PANTALLA CON `WindowStartupLocation="CenterScreen"`.
+    `WindowStyle="None"` HACE QUE NO TENGA LOS BOTONES NORMALES DE VENTANA (CERRAR, MINIMIZAR), Y LE DOY UN FONDO TRANSPARENTE 
+    CON `AllowsTransparency="True"`. -->
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="Black" Offset="0.0"/>
+                <GradientStop Color="LightGray" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border CornerRadius="20" Background="White" Padding="10" Width="300" Height="380"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <!-- AQUÍ DENTRO DEL GRID, CREO UN `Border`, QUE LE DA UNA ESPECIE DE MARCO A LA INTERFAZ DEL LOGIN. 
+            LE PONGO LAS ESQUINAS REDONDEADAS CON `CornerRadius="20"` Y LE DOY UN FONDO BLANCO CON `Background="White"`. 
+            TAMBIÉN LE DIGO QUE SU ANCHO Y ALTURA SEAN 300x380, Y QUE ESTÉ CENTRADO HORIZONTAL Y VERTICALMENTE. EL `Padding="10"` LE DICE QUE TENGA ESPACIO ENTRE SU CONTENIDO Y EL BORDE. -->
+
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="10" Opacity="0.5"/>
+            </Border.Effect>
+
+            <!-- AQUÍ LE PONGO UN EFECTO SOMBRA AL BORDE CON `DropShadowEffect`. LE DIGO QUE QUIERO QUE LA SOMBRA SEA NEGRA 
+            CON `Color="Black"`, QUE TENGA UNA DESENFOQUE (BORROSIDAD) DE 20 PÍXELES, Y QUE LA SOMBRA TENGA UNA PROFUNDIDAD DE 10 Y UNA OPACIDAD DEL 50%. 
+            ESTO HACE QUE SE VEA UN EFECTO DE SOMBRA SUAVECITO ALREDEDOR DEL MARCO. -->
+
+            <Grid Margin="20">
+                <TextBlock Text="Login" FontSize="28" FontWeight="Bold" Foreground="Red"
+                           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,20"/>
+
+                <!-- AQUÍ ESTOY AÑADIENDO UN `TextBlock` QUE ES EL TÍTULO "Login". LO CENTRO TANTO HORIZONTAL COMO VERTICALMENTE, 
+                LE DOY UN TAMAÑO DE FUENTE DE 28 Y LO PONGO EN NEGRITA (Bold). TAMBIÉN LE DIGO QUE QUIERO QUE EL COLOR DEL TEXTO SEA ROJO. 
+                LE AÑADO MÁRGENES PARA QUE NO SE QUEDE PEGADO A LOS BORDES. -->
+
+                <Border BorderBrush="Red" BorderThickness="0,2,0,0" Height="2" Margin="0,60,0,0" VerticalAlignment="Top"/>
+
+                <!-- AQUÍ ESTOY AGREGANDO UNA LÍNEA (PERO HECHA COMO UN BORDE) DE COLOR ROJO JUSTO DEBAJO DEL TÍTULO. 
+                ES UN PEQUEÑO DETALLE VISUAL QUE LE DA UN TOQUE PRO. EL `BorderThickness="0,2,0,0"` DICE QUE SÓLO QUIERO QUE LA LÍNEA SEA DE 2 PÍXELES EN LA PARTE SUPERIOR. -->
+
+                <StackPanel VerticalAlignment="Top" Margin="0,80,0,0">
+
+                    <!-- AQUI LE METO UN `StackPanel`, QUE ES COMO UN CONTENEDOR QUE COLOCA LOS ELEMENTOS UNO DEBAJO DEL OTRO. 
+                    LO PONGO HACIA LA PARTE SUPERIOR Y LE DOY UN MARGEN PARA QUE HAYA ESPACIO ENTRE EL TÍTULO Y LOS CAMPOS DE USUARIO Y CONTRASEÑA. -->
+
+                    <TextBlock Text="Usuario" FontWeight="Bold" Foreground="Red" Margin="10,5,0,5"/>
+                    <TextBox Name="txtUsuario" Height="30" Margin="10,0,10,10" Padding="5">
+
+                        <!-- ESTE `TextBlock` DICE "Usuario" Y LO ESTILIZO EN NEGRITA (Bold) Y EN ROJO. DEBAJO DE ESTE TÍTULO, AÑADO 
+                        UN `TextBox` PARA QUE EL USUARIO PUEDA INTRODUCIR SU NOMBRE. LE PONGO UN POCO DE MARGEN Y ALGO DE RELLENO (PADDING) 
+                        PARA QUE EL TEXTO NO SE PEGUE A LOS BORDES DEL `TextBox`. -->
+
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="2" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="5" Opacity="0.7"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+
+                        <!-- AQUÍ ESTOY HACIENDO UN POCO DE "MAGIA" VISUAL: LE PONGO UN `DropShadowEffect` SUAVE CUANDO EL `TextBox` ESTÁ 
+                        SIN INTERACCIÓN (EFECTO GRIS), Y CUANDO EL RATÓN PASA POR ENCIMA (`IsMouseOver`), LE CAMBIO EL EFECTO PARA QUE LA SOMBRA 
+                        SEA MÁS FUERTE (EFECTO NEGRO MÁS INTENSO). ES SÓLO PARA HACER QUE EL `TextBox` SE VEA MÁS INTERACTIVO. -->
+
+                    </TextBox>
+
+                    <TextBlock Text="Contraseña" FontWeight="Bold" Foreground="Red" Margin="10,5,0,5"/>
+                    <PasswordBox Name="txtClave" Height="30" Margin="10,0,10,20" Padding="5">
+
+                        <!-- AQUÍ HAGO LO MISMO QUE CON EL USUARIO, PERO PARA LA CONTRASEÑA. EN VEZ DE UN `TextBox`, USO UN `PasswordBox`, 
+                        QUE ESCONDE LO QUE SE ESCRIBE DENTRO PARA QUE NO SE VEA (PORQUE ES UNA CONTRASEÑA). TAMBIÉN LE PONGO LOS MISMOS ESTILOS. -->
+
+                        <PasswordBox.Style>
+                            <Style TargetType="PasswordBox">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="2" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="5" Opacity="0.7"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </PasswordBox.Style>
+
+                        <!-- DE NUEVO, AÑADO UN POCO DE EFECTO DE SOMBRA PARA DARLE ESE TOQUE INTERACTIVO AL `PasswordBox`, IGUAL QUE HICE 
+                        CON EL `TextBox` DEL USUARIO.-->
+
+                    </PasswordBox>
+
+                    <!-- BOTONCITO ENTRAR -->
+                    <Button Name="btnEntrar" Content="Entrar" Width="100" Height="40" 
+                            Background="Red" Foreground="Black" FontWeight="Bold" 
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                            Click="btnEntrar_Click">
+
+                        <!-- ESTE ES EL BOTÓN "ENTRAR". CUANDO LO PULSO, LLAMA A LA FUNCIÓN `btnEntrar_Click`. 
+                        LE DOY UN COLOR DE FONDO ROJO Y UN TEXTO NEGRO EN NEGRITA. LO CENTRO HORIZONTAL Y VERTICALMENTE. -->
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="5" Opacity="0.7"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="RenderTransform">
+                                            <Setter.Value>
+                                                <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="10" Opacity="0.9"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <!-- COMO DETALLE, CUANDO EL RATÓN SE COLOCA ENCIMA DEL BOTÓN, AUMENTO EL TAMAÑO CON `ScaleTransform` Y HAGO QUE LA SOMBRA SEA MÁS FUERTE CON UN `DropShadowEffect`. -->
+
+                    </Button>
+
+                    <!-- BOTONCITO REGISTRAR -->
+                    <Button Name="btnRegistrar" Content="Registrar" Width="100" Height="40" 
+                            Background="Red" Foreground="Black" FontWeight="Bold" 
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0"
+                            Click="btnRegistrar_Click">
+
+                        <!-- ESTE ES EL BOTÓN "REGISTRAR". CUANDO LO PULSO, LLAMA A LA FUNCIÓN `btnRegistrar_Click`, QUE ABRE LA VENTANA DE REGISTRO. -->
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="5" Opacity="0.7"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="RenderTransform">
+                                            <Setter.Value>
+                                                <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="10" Opacity="0.9"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <!-- LE APLICO EL MISMO EFECTO QUE AL BOTÓN "ENTRAR": CUANDO EL RATÓN SE COLOCA ENCIMA, AUMENTA EL TAMAÑO Y LA SOMBRA SE VUELVE MÁS FUERTE. -->
+
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

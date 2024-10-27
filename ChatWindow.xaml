@@ -1,0 +1,431 @@
+﻿<Window x:Class="Educa_Innova.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ventana de Chat" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow" AllowsTransparency="False" Background="LightGray">
+
+    <!-- 
+     
+        - WindowStartupLocation: ABRO LA VENTANA EN EL CENTRO DE LA PANTALLA
+        EL TRUCO ES Q AL MAXIMIZAR, SLAMENTE SE AGRANDE EL BACKGROUND Y EL CENTRO SE QUEDE
+        - WindowStyle="None": Elimina la barra de título y los bordes estándar de la ventana.
+        - AllowsTransparency="False": VENTANA TRASPARENTE, SI NO ESTÁ EN FALSE DA ERROR AL TENER
+        EL WINDOWSTYLE EN SINGLEBORDERWINDOW
+        - EL BACKGROUND EN TRANSPARENTE ME PERMITIRÁ EFECTOS PERSONALIZADOS
+    -->
+
+    <!--EL FONDO TIENE UN GRADIENTE, Offset
+        REPRESENTA LA POSICION DEL COLOR, COMO VAMOS A ROTAR ENTRE LOS 2 COLORES ELEGIDOS
+        EN EL LIENZO, 0.0 ES EL ANARANJADO Y 1.0 ES EL VERDOSO, SI EEMPEZAMOS EN 0.0 EN EL ANARANJADO
+        ES DECIR, 0.0 ES EL INICIO Y 1.0 EL FINAL DEL GRADIENTE-->
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFCC80" Offset="0.0"></GradientStop>
+                <GradientStop Color="#A5D6A7" Offset="1.0"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!-- PANEL PPAL TIENE BORDE Y SOMBREADO PARA UN EFECTO 3D Y BORDE REDONDEADO-->
+        <Border CornerRadius="20" Background="LightGray" Padding="10" Width="1150" Height="750"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Color="#000000" BlurRadius="30" ShadowDepth="10" Opacity="0.8">
+                </DropShadowEffect>
+            </Border.Effect>
+
+            <!-- EL GRID LO MUEVO AQUI PARA Q ESTE DENTRO DEL BORDER -->
+            <Grid Margin="20">
+                <TextBlock Text="Chat en Vivo" FontSize="40" FontWeight="Bold" Foreground="#FF7043"
+                           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,20">
+                    <TextBlock.RenderTransform>
+                        <!-- 
+                                TranslateTransform:
+                                - X y Y: TRANSFORMACIÓN DE DESPLAZAMIENTO INICIAL
+                        CON UN EFECTO DE VIBRACION CADA 5 SEGUNDOS (QUE METERE EN DOUBLEANIMATION)
+                        ROUTEDEVENT DISPARA LA ANIMACIÓN CUANDO CARGA
+                           CON BEGINSTORYBOARD LA ANIMACIÓN SE REPITE INDEFINIDAMENTE EN REPEATBEHAVIOR=FOREVER -->
+                        <TranslateTransform X="0" Y="0"></TranslateTransform>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                            From="-3" To="3" Duration="0:0:0.3" BeginTime="0:0:5">
+                                        <!--TANTO EN X COMO EN EJE Y ESTO HACE QUE DESPLACEMOS DESDE -3 A 3 UNIDADES, DURANTE 0.3 SEGUNDOS Y QUE EL BEGINTIME
+                                        NOS DICE QUE SE INIICIA 5 SEGUNDOS DESPUÉS DE CARGAR EL ELEMENTO-->
+                                    </DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                     From="-3" To="3" Duration="0:0:0.3" BeginTime="0:0:5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                </TextBlock>
+
+                <!-- Panel Superior (Seleccionar Fecha, Guardar y Ver Mensajes) -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,80,0,0">
+                    <TextBlock FontSize="20" Text="Selecciona una fecha:" Foreground="#0288D1" FontWeight="Bold"
+           VerticalAlignment="Center" Margin="0,0,10,0">
+                        <TextBlock.Effect>
+                            <!--BLUR, SOMBRA Y OPACIDAD PARA LOS 3 LABEL TAMBIÉN-->
+                            <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="3" Opacity="0.5"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <DatePicker Name="datePickerFecha" Width="150" Margin="0,0,10,0">
+                        <!--VOY A DARLE UN EFECTO DE ENTRADA SUAVE AL CARGAR Y SOMBRA 3D, CON RENDERTRANSFORM TAMBIÉN
+                        TRANSLATETRANSFORM Y UN EFFECTO DE SOMBREADO CON DROPSHADOWEFFECT. COMO SIEMPRE, EVENTTRIGGER ROUTEDEVENT="LOADED" PARA
+                        QUE ESPERE LA CARGA DEL ELEMENTO Y UN BEGINSTORYBOARD CON STORYBOARD PARA DOUBLEANIMATION QUE ME DARÁ UN DESPLAZAMIENTO DESDE, EN ESTE CASO
+                        -200 A 0 UNIDADES Y LA DURACIÓN DE ESTA TRANSICIÓN SERÁ DE 1.5 SEGUNDOS-->
+                        <DatePicker.RenderTransform>
+                            <TranslateTransform X="-200">
+                                <!--EL ORDEN SIEMPRE EL MISMO:
+                                Elemento.RenderTransform
+                                    TranslateTransform X o Y="DESPLAZAMIENTO DE LA TRANSFORMACIÓN"-->
+                            </TranslateTransform>
+                        </DatePicker.RenderTransform>
+
+                        <!--ADORO EL EFECTO SOMBREADO 3D Y ES SÚPER SENCILLO:
+                        Elemento.Effect
+                            DropShadowEffect -> Le damos colorcito, BlurRadius (es como la distorsion de la sombra para amyor realismo)
+                        y ShadowEffect="entero entre 1 y 10 es lo más recomendado"-->
+                        <DatePicker.Effect>
+                            <DropShadowEffect Color="#0288D1" BlurRadius="10" ShadowDepth="4" Opacity="0.7">
+
+                            </DropShadowEffect>
+                        </DatePicker.Effect>
+                        <!--AHORA EL TRIGGER DE ACTRIVACION-->
+                        <DatePicker.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!--LE DOY ANIMACION DE DESPLAZAMIENTO DE X Y Y -->
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             From="200" To="0" Duration="0:0:4"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             From="500" To="0" Duration="0:0:4"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </DatePicker.Triggers>
+                    </DatePicker>
+                    <!--BOTON 1 BUSCAR MENSAJES-->
+                    <Button Content="Buscar Mensajes de esa Fecha" Background="#00796B" Foreground="White"
+            FontWeight="Bold" Width="220" Height="30" Margin="10,0,20,0" Click="btnBuscarFecha_Click">
+                        <!--CON EL BOTÓN FUNCIONA DIFERENTE SI ES AL HACER HOVER CUANDO QUIERO EL SOMBREADO.., NO ES Elemento.Effect
+    ES Button.Style Y LUEGO STYLE, LUEGO SETTER, SETTER.VALUE Y YA EL EFECTO 3D, ALGO
+    MÁS COMPLICADILLO QUE EN EL RESTO DE ELEMENTOS PERO INTUITIVO-->
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="#004D40" BlurRadius="10" ShadowDepth="4" Opacity="0.6"></DropShadowEffect>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TransformGroup>
+                                            <TranslateTransform Y="0"/>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                        </TransformGroup>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Style.Triggers>
+                                    <!-- 3 SEGUNDOS EN LLEGAR DESDE 50 PIXELES ARRIBA HASTA SU POSICION ORIGINAL -->
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                             From="-100" To="0" Duration="0:0:1"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FFF176"></Setter>
+                                        <Setter Property="Effect">
+                                            <!--Setter.Value LE CAMBIO LOS VALORES
+PARA QUE NO TODOS LOS BOTONES TENGAN LOS MISMOS-->
+                                            <Setter.Value>
+                                                <DropShadowEffect Color="#004D40" BlurRadius="20" ShadowDepth="5" Opacity="0.8"></DropShadowEffect>
+                                            </Setter.Value>
+                                            <!--AHORA VOY A PRACTICAR HACER EL BOTÓN MÁS CHIQUITÍN AL HACER HOVER TAMBIÉN
+YA QUE LO NORMAL ES HACERLO GRANDE
+SÚPER SENCILLO CON ATRIBUTOS ScaleX y ScaleY, VALOR TOTAL = 1, MENOS ES MÁS PEQUEÑO-->
+
+                                        </Setter>
+                                        <Setter Property="RenderTransform">
+                                            <Setter.Value>
+                                                <TransformGroup>
+                                                    <TranslateTransform Y="0"/>
+                                                    <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                                </TransformGroup>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                    <!--BTN 2 -> GUARDAR
+                    
+                    MISMO COLOR RECOGIDO EN LA PALETA PARA ESTOS #0288D1-->
+                    <Button Name="btnGuardar" Content="Guardar mensajes" Background="#0288D1" Foreground="White"
+                                FontWeight="Bold" Width="150" Height="30" Margin="20,0,10,0" Click="btnGuardar_Click">
+                        <Button.RenderTransform>
+                            <TranslateTransform X="200" Y="200"></TranslateTransform>
+                        </Button.RenderTransform>
+                        <Button.Effect>
+                            <DropShadowEffect Color="#37474F" BlurRadius="15" ShadowDepth="4" Opacity="0.7"></DropShadowEffect>
+                        </Button.Effect>
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard >
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="200" To="0" Duration="0:0:1.0"></DoubleAnimation>
+                                        <!--DENTRO DE STORYBOARD PUEDO METER MUCHAS DOUBLEANIMATION
+                                        ESTE CASO VA A TENER 2 DOUBLEANIMATION, EL BOTÓN VIENE DESDE ARRIBA Y DERECHA-->
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             From="200" To="0" Duration="0:0:1.0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <!--BTN VER MENSAJES!!!
+                    EL COLOR DE LAS LETRAS COMO EN JAVA, ES FOREGROUND-->
+                    <Button x:Name="btnVer" Content="Ver Mensajes" Background="#FF8F00" Foreground="White"
+                              FontWeight="Bold" Width="150" Height="30" Click="btnVer_Click">
+                        <Button.RenderTransform>
+                            <!--ESTE BOTON VA A ENTRAR GIRANDO UN ÁNGULO DE 90º-->
+                            <RotateTransform Angle="90"></RotateTransform>
+                        </Button.RenderTransform>
+                        <Button.Effect  >
+                            <DropShadowEffect  Color="#BF360C" BlurRadius="15" ShadowDepth="4" Opacity="0.7">
+                            </DropShadowEffect>
+                        </Button.Effect>
+                        <Button.Triggers>
+                            <!--RECUERDA DIEGO SIEMPRE IMPORTANTISIMO EL ROUTEDEVENT EN LOADED PRQUE SINO EL EFECTO SE ACTIVA
+                            ANTES DE PINTARSE Y NO SE VE EL BOTON-->
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!--A LA DOBLEANIMACION LE TENMEOS QUE DECIR DESDE LOS GRADOS QUE COMIENZA Y DONDE TERMINA, EN ESTE CASO EN 0 (POSICIÓN NORMAL), TARDARÁ 1.5-->
+                                        <!--APRENDER UIELEMENT DE MEMORIA PORQUE XAML NO TE LO RELLENA AUTOMÁTICAMENTE-->
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                         From="90" To="0" Duration="0:0:1.5"></DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </StackPanel>
+                <!--ESTE STACKPANE LSERÁ  EL DE LOS USUARIOS, (TEXTBLOCK Y COMBOBOX, AL QUE TAMBIÉN DAREMOS EFECTO)-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,140,20,0" VerticalAlignment="Top">
+                    <TextBlock FontSize="20" Text="Usuarios que envían:" FontWeight="Bold" Foreground="#6A1B9A" Margin="0,0,0,5">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="3" Opacity="0.5"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <ComboBox FontSize="15" Name="cmbUsuarios" Width="200" Height="35" Margin="0,0,0,10" SelectionChanged="cmbUsuarios_SelectionChanged">
+                        <!--DEJO COMBOBOX ABIERTO POR SI MÁS TARDE QUIERO METER ANIMACIONES-->
+                        <!--LE QUIERO DAR DOS EFECTOS, UNO GIRATORIO Y OTRO DE DESPLAZAMIENTO-->
+                        <!--NECESITARÉ ROTATETRANSFORM Y TRANSLATETRANSFORM-->
+
+                        <ComboBox.RenderTransform>
+                            <!--AQUI HAY UN PROBLEMA -->
+                            <!--RotateTransform y TranslateTransform NO PUEDEN COEXISTIR COMO HIJOS DIRECTOS DEL MISMO RenderTransform.-->
+                            <!--DEBO ENCAPSULARLOS EN EN UN TransformGroup
+                            QUE ME LOS GUARDARÁ EN UN ARRAY DE 2 POSICIONES (EN ESTE CASo)-->
+                            <TransformGroup>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform X="300" Y="500"/>
+                            </TransformGroup>
+                        </ComboBox.RenderTransform>
+
+                        <ComboBox.Effect>
+                            <DropShadowEffect Color="#4A148C" BlurRadius="10" ShadowDepth="5" Opacity="0.8"/>
+                        </ComboBox.Effect>
+
+                        <ComboBox.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!--LE DOY ANIMACION DE 2 VUELTAS A VER Q TAL QUEDA, 720º-->
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                             From="720" To="0" Duration="0:0:3"/>
+
+                                        <!--ANIMACION DE DESPLAZAMIENTO QUE TARDA 3 SEGUNDOS EN COLOCARSE HORIZONTALMENTE Y 3 VERTICALMENTE, AL SER UN ARRAY [1]-->
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                             From="-300" To="0" Duration="0:0:3"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                             From="-500" To="0" Duration="0:0:3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ComboBox.Triggers>
+                    </ComboBox>
+                </StackPanel>
+
+                <!--CIERRO STACKPANEL
+                    TEXTBOX (CAJA DE TEXTO MULTILINEA) NO TENDRÁ PANEL-->
+                <TextBox Name="txtMensajes" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                         Height="400" Margin="0,160,20,0" Padding="10" Foreground="#1A237E" Background="#EDE7F6" FontFamily="Segoe UI"
+                         IsReadOnly="True" Grid.ColumnSpan="3">
+                    <!--EXPLICACIÓN DETALLADA DE LOS ATRIBUTOS Q LE DOY Y NO SON LOS HABITUALES:
+                    - AcceptsReturn en "True": PERMITE SALTOS DE LÍNEA
+                    - TextWrapping="Wrap":AJUSTA EL TEXTO AUTOMÁTICAMENTE JUSTIFY
+                    - VerticalScrollBarVisibility="Auto":MOSTRARÁ EL SCROLL VERTICAL SÓLO SI HAY MÁS MENSAJES DE LOS QUE SE PUEDEN VER A SIMPLE VISTA
+                    
+                    Y AHORA.. LOS ESTILOS-->
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="#1976D2" BlurRadius="15" ShadowDepth="6" Opacity="0.8"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <!--HOVER TEXTBOX-->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <!-- UNA SOMBRA DIFERENTE, BLUR ES LA DISTORSION -->
+                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                 To="25" Duration="0:0:0.3"/>
+                                                <!--SHADOWDEPTH LA PROFUNDIDAD DE LA SOMBRA -->
+                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
+                                 To="8" Duration="0:0:0.3"/>
+                                                <!--EN EL HOVER, A LIGHTGREEN-->
+                                                <ColorAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)"
+                                                To="LightGreen" Duration="0:0:0.3"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <!--ANIMACIONES DE ENTRADA Y SALIDA Enter-Exit-->
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <!--ESTABLECEMOS LOS VALORES NORMALES AL SALIR -->
+                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                 To="15" Duration="0:0:0.3"/>
+                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)"
+                                 To="6" Duration="0:0:0.3"/>
+                                                <!--VUELVE EL COLOR ORIGINAL AL QUITAR EL MOUSE-->
+                                                <ColorAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)"
+                                                To="#1976D2" Duration="0:0:0.3"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,10,0,10">
+                    <TextBlock FontSize="19" Text="Mensaje:" Foreground="#5D4037" FontWeight="Bold" Margin="5,0,5,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="3" Opacity="0.5"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBox Name="txtMensajeEnviar" Width="400" Height="35" Padding="5" FontFamily="Segoe UI"
+                                 KeyDown="intro">
+
+                        <!--A ESTA CAJA LE QUIERO DAR UN EFECTO ESPAGUETI CON TEMPORIZADOR, CADA 7 SEGUNDOS
+                        POR EJEMPLO-->
+                        <TextBox.RenderTransform>
+                            <TranslateTransform X="0" Y="0"/>
+                        </TextBox.RenderTransform>
+                        <TextBox.Effect>
+                            <DropShadowEffect Color="#000000" BlurRadius="10" ShadowDepth="5" Opacity="0.7"/>
+                        </TextBox.Effect>
+                        <TextBox.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                        <!--AQUÍ ES DONDE DEFINIMOS RepeatBehavior="Forever" IGUAL QUE EL TÍTULO Y AutoReverse a TRUE PARA
+                                        LA REPETICIÓN SISTEMÁTICA DE LA ANIMACIÓN, DURA 0.4 SEGUNDOS Y SE INICIA CADA 7 SEGUNDOS-->
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             From="-5" To="5" Duration="0:0:0.4" BeginTime="0:0:7"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             From="-5" To="5" Duration="0:0:0.4" BeginTime="0:0:7"/>
+                                        <!--CON UN TRANSFORM SENCILLO LE DAMOS EL EFECTO VIBRANTE-->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBox.Triggers>
+                    </TextBox>
+
+                    <!--BOTÓN ENVIAR MSJ-->
+                    <Button Name="btnEnviar" Content="Enviar" Background="#4CAF50" Foreground="White"
+        FontWeight="Bold" Width="120" Height="35" Margin="10,0,0,0" Click="btnEnviar_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="#2E7D32" BlurRadius="10" ShadowDepth="4" Opacity="0.7">
+                                        </DropShadowEffect>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform X="0"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <!--2 SEGUDNS DESDE LA DERECHA-->
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                             From="350" To="0" Duration="0:0:1"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FFF176"></Setter>
+                                        <Setter Property="Effect">
+                                            <!--Setter.Value LE CAMBIO LOS VALORES
+PARA QUE NO TODOS LOS BOTONES TENGAN LOS MISMOS-->
+                                            <Setter.Value>
+                                                <DropShadowEffect Color="#004D40" BlurRadius="20" ShadowDepth="5" Opacity="0.8"></DropShadowEffect>
+                                            </Setter.Value>
+                                            <!--AHORA VOY A PRACTICAR HACER EL BOTÓN MÁS CHIQUITÍN AL HACER HOVER TAMBIÉN
+YA QUE LO NORMAL ES HACERLO GRANDE
+SÚPER SENCILLO CON ATRIBUTOS ScaleX y ScaleY, VALOR TOTAL = 1, MENOS ES MÁS PEQUEÑO-->
+
+                                        </Setter>
+                                        <Setter Property="RenderTransform">
+                                            <Setter.Value>
+                                                <TranslateTransform X="0"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+
+                    <!--BOTON LIMPIAR DESHABILITADO EN UN INICIO
+                    PROGRAMAR EL BACKEND PARA APARECER CUANDO CORRESPONDE-->
+                    <Button Name="btnLimpiarPantalla" Content="Limpiar Pantalla" Background="#C62828" Foreground="White" FontWeight="Bold"
+                                Width="150" Height="35" Margin="320,0,0,0" Click="btnLimpiarPantalla_Click" Visibility="Collapsed"/>
+                </StackPanel>
+                
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
